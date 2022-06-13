@@ -50,58 +50,64 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Jumlah ketika tombol ditekan:',
-            ),
-            const SizedBox(height: 30),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const SizedBox(height: 50),
-            const Text(
-              'Silahkan pilih halaman di bawah ini:',
-            ),
-            const SizedBox(height: 10),
+      body: Container(
+        
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            
+            children: <Widget>[
+              const Text(
+                'Jumlah ketika tombol ditekan:', style: TextStyle(fontSize: 24)
+              ),
+              const SizedBox(height: 30),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              const SizedBox(height: 50),
+              const Text(
+                'Silahkan pilih halaman di bawah ini:', style: TextStyle(fontSize: 24)
+              ),
+              const SizedBox(height: 20),
 
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: [
-                
-                ElevatedButton(
-                  child: const Text('1'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/halaman1',
-                    arguments: Info('$_counter'));
-                  },
-                ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  child: const Text('2'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/halaman2',
-                    arguments: Info('$_counter'));
-                  },
-                ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  child: const Text('3'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/halaman3',
-                    arguments: Info('$_counter'));
-                  },
-                ),
-                
-              ]
-            ),
+            Row(children: [
+               ButtonBar(
+                children: [
+                  
+                  ElevatedButton(
+                    child: const Text('1'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/halaman1',
+                      arguments: Info('$_counter'));
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    child: const Text('2'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/halaman2',
+                      arguments: Info('$_counter'));
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    child: const Text('3'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/halaman3',
+                      arguments: Info('$_counter'));
+                    },
+                  ),
+                  
+                ]
+              ),
+            ],) 
 
-          ],
+            ],
+            
+          ),
+        
         ),
-      ),
+        
       
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -132,7 +138,7 @@ class FirstPage extends StatelessWidget {
         title: Text(title),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        
         children: [
           Center(
             child: Text(args.count,
